@@ -48,10 +48,6 @@ class Scrapper:
         for cookie in self.cookies:
             self.session.cookies.set(cookie['name'], cookie['value'])
 
-    def post(self, url, payload):
-        response = self.session.post(url, json=payload)
-        return response
-
     def get_page_data(self, currPage):
         url = f"https://www.nomination.com/it_it/amlocator/index/ajax/?p={currPage}"
         response = self.session.post(url,
